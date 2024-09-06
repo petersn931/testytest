@@ -1,0 +1,65 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip> 
+using namespace std;
+
+int main() { 
+  int integer = 0;
+  cout << "The equation 56 % 6 will print 2"<<endl;
+  cout << "The equation 2 + 78 % 4 will print 4"<<endl;
+  cout << "The equation (34 % 5) / 3 will print 1"<<endl;
+  cout << "The equation 2 * 5 / 5 + 3 - 34 % 15 will print 1"<<endl;
+  cout << "The equation 5%((13 % 12)-1) will print an error as it results in 5%0 which is incalcuable\n\n"<<endl;
+
+
+
+  
+  cout<<"Enter an integer number to see if its divisible by 4 or not: "<<endl;
+  cin>>integer;
+  if(integer < 0){
+    cout<<"The program does not accept negative numbers. " <<endl;
+  }
+  if(integer > 100){
+    cout<<"The integer is greater thab 100 and its sqaured root is: " <<sqrt(integer)<<endl;
+  }
+  if(integer%4 != 0){
+    cout<<"The number isn't divisble by 4"<<endl;
+    cout<<"Quotient: "<<integer/4<<" Remainder: "<<integer%4<<endl;
+  }
+  cout<<"\n\n"<<endl;
+
+
+
+  double side;
+  double area;
+  cout<<"Enter the side "<<endl;
+  cin>>side;
+  area=((6*pow(side,2))/(4*tan(M_PI/6)));
+  cout<<"The are is: "<<fixed<<setprecision(2)<<area<<"\n\n"<<endl;
+
+
+
+  
+  
+  
+  int y=1;
+  int total = 0;
+  int temp=0;
+  cout <<"Enter an integer between 1-1000000: ";
+  cin >> integer;
+  while(integer>=10){
+    while(y<integer){
+      y=y*10;
+    }
+    y=y/10;
+    for(int x = y; x != 0; x=x/10){
+      temp=integer/x;
+      total = total+temp;
+      integer=integer%x;
+    }
+    integer=total;
+    temp=0;
+    total=0;
+    cout<<"The sum of the digits is "<<integer<<endl;
+  }
+}
